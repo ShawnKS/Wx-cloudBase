@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="page__hd">
+     <view class="section__ctn">
+     <image style="width:240px;height:40px;"src="https://sdmda.bupt.edu.cn/wp-content/themes/media/images/headerlogox.png"></image>
+     </view>
+  </view>
+<view class="page__bd">
+<view class="section">
+  <input type="text" bindinput="userNameInput" placeholder="用户名" auto-focus />
+</view>
+<view class="section">
+  <input type="password" bindinput="userPasswordInput" placeholder="密码"  />
+</view>
+<view class="section">
+  <input type="password" bindinput="userPasswordAgainInput" placeholder="重复密码"  />
+</view>
+
+<view class="section">
+  <view class="btn-area">
+<button type="default" bindtap="onrigistTap">注册</button>
+  </view>
+</view>
+
+<view class="section">
+  <view class="btn-area">
+<button type="default" bindtap='backHome'>返回首页</button>
+  </view>
+</view>
+
+</view>
+</view>
