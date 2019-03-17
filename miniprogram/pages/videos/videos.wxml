@@ -1,0 +1,8 @@
+<!--video.wxml-->
+<view class="root">
+  <video src="cloud://hardwa-f51520.6861-hardwa-f51520/szdl1.mp4" style="width: 100%; height: {{videoHeight}}px;" autoplay="true"></video>
+  <view class="video_title">课程标题</view>
+  <view class="weui-cells">
+      课程说明        testtesttestttt11111   
+  </view>
+</view>

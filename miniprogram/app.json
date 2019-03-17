@@ -6,13 +6,26 @@
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/chooseLib/chooseLib",
+    "pages/videos/videos"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "云开发平台",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar":{
+  "list":[
+    {
+      "pagePath":"pages/index/index",
+      "text":"用户界面"
+    },
+    {
+      "pagePath":"pages/videos/videos",
+      "text":"课程"
+    }
+  ]
   }
 }
