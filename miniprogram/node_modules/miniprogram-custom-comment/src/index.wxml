@@ -1,0 +1,40 @@
+<view></view>
+<view wx:if="{{commentData.commentArr.length>0}}" class="page__bd">
+  <view class="weui-panel">
+    <view class="weui-panel__hd">{{commentData.title}}</view>
+    <view class="weui-panel__bd">
+      <view wx:for="{{commentData.commentArr}}" wx:key="{{index}}" class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-cells weui-cells_in-small-appmsg">
+          <view class="weui-cell weui-cell_access">
+            <view class="weui-cell__hd">
+              <image class="userinfo-avatar" src="{{item.avatarUrl?item.avatarUrl:'/images/user.png'}}" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary text">
+              <view class="userinfo-span">{{item.nickName?item.nickName:"匿名用户"}}<span wx:if="{{item.name!=null}}">(企业微信)</span></view>
+              <view class="weui-media-box__title_in-text" data-content="{{item.content}}" bindtap="tap">{{item.content}}</view>
+              <!-- <view class="weui-media-box__desc">{{item.lastTime}} · <span bindtap="reply">回复</span></view> -->
+              <view class="weui-media-box__desc">{{item.lastTime}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{pageY!=0 && pageX!=0}}" class="tooltip" style="top:{{pageY}}px; left:{{pageX}}px;">
+  <view class="tooltip-content">
+    <span class="tooltip-arrow"></span>
+    <view class="tooltip-inner">
+      <span bindtap="copy">{{tooltip}}</span>
+    </view>
+  </view>
+</view>
+<block class="comment">
+  <form class="comment-form" style='bottom:{{height}}px; padding-bottom:{{height==0?bottom:0}}rpx;'>
+      <block class="coment-box">
+        <input class="comment-input" type="text" focus="{{focus}}" bindfocus='focus' bindinput="input" bindblur="blur" bindconfirm="confirm" cursor-spacing="0" adjust-position="{{false}}" confirm-type="send" value="{{commentData.content}}" placeholder="{{commentData.placeholder}}" maxlength="120" />
+        <i wx:if="{{commentValue.length>0}}" class="weui-icon-clear fa fa-times-circle" bindtap="clear"></i>
+        <label class="comment-btn {{commentValue.length>=6?'active':''}}" data-value="{{commentValue}}" bindtap="confirmButton"><i class="fa fa-paper-plane"></i> {{commentData.commentText}}</label>
+      </block>
+  </form>
+</block>

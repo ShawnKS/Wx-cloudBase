@@ -1,0 +1,146 @@
+view {
+  min-height: 30rpx;
+}
+
+.weui-cell {
+  align-items: flex-start;
+}
+
+.weui-media-box__title_in-text {
+  font-size: 28rpx;
+  margin-bottom: 0;
+}
+
+.weui-media-box__desc {
+  font-size: 24rpx;
+}
+
+.comment-form {
+  position: fixed;
+  padding-top: 20rpx; 
+  background: #fff;
+  width: 120vw;
+  height: 80rpx;
+  bottom: 0;
+  z-index: 9999;
+  border-top: 1rpx solid #e8e8e8;
+  box-shadow: 3rpx 3rpx 10rpx rgba(0, 0, 0, 0.2);
+
+}
+
+.comment-box {
+  display: block;
+}
+
+.comment-input {
+  float: left;
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  width: 500rpx;
+  padding: 0 60rpx 0 20rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  background: #fff;
+  border: 1rpx solid #e8e8e8;
+}
+
+.comment-input:focus {
+  outline: none;
+}
+
+.comment-btn {
+  font-size: 32rpx;
+  float: left;
+  width: 140rpx;
+  height: 64rpx;
+  text-align: center;
+  line-height: 64rpx;
+  color: #e8e8e8;
+}
+
+.comment-btn.active {
+  color: #4584d1;
+}
+
+.weui-icon-clear {
+  left: 555rpx;
+  width: 40rpx;
+  top: 30rpx;
+  color: #e8e8e8;
+}
+
+.userinfo {
+  width: 60rpx;
+  margin-right: 30rpx;
+  text-align: center;
+}
+
+.userinfo-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 2rpx solid #fff;
+  box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, 0.2);
+}
+
+.userinfo-span {
+  display: block;
+  line-height: 48rpx;
+  height: 48rpx;
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #4584d1;
+  margin-bottom: 10rpx;
+}
+
+.tooltip {
+  display: flxed;
+  font-variant: tabular-nums;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: rgba(0,0,0,.65);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-width: 80rpx;
+  list-style: none;
+  position: absolute;
+  padding-bottom: 16rpx;
+}
+
+/* .tooltip-content {
+
+} */
+
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  bottom: 6rpx;
+  border-width: 10rpx 10rpx 0;
+  border-top-color: rgba(0,0,0,.75);
+  left: 50%;
+  margin-left: -10rpx;
+}
+
+.tooltip-inner {
+  padding: 6px 8px;
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+  background-color: rgba(0,0,0,.75);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  word-wrap: break-word;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+}
+
+.tooltip-inner span {
+  padding: 10rpx;
+}
