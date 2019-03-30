@@ -13,7 +13,7 @@ Page({
     m:'',
     s:'',
     timestamp:'',
-    commentsfeed:'',
+    comment_list :[]
   },
 
   textinput: function(e) {
@@ -75,12 +75,12 @@ Page({
     wx.cloud.init({
       env: 'hardwa-f51520',
     });
+    var _this = this;
     const db = wx.cloud.database();
       db.collection('comments').get({
-        success(res){
-          console.log(res.data)
+        success: res => {
           this.setData({
-          commentsfeed: res
+            comment_list:res.data
           })
         }
       })

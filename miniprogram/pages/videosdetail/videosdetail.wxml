@@ -1,0 +1,31 @@
+<!--video.wxml-->
+<view class="root">
+  <video src="{{video.videosource}}" style="width: 100%; height: {{videoHeight}}px;" autoplay="false"></video>
+  <view class="video_title">{{video.videoname}}</view>
+  <view class="weui-cells">
+    课程说明 testtesttestttt11111
+  </view>
+  <view>
+
+    <view class="weui-cells__title">评论列表</view>
+    <block wx:for="{{comments}}">
+        <view class="weui-cell__bd">
+          <p>{{item.textinput}}</p>
+        </view>
+        <view class="weui-cell__ft">{{item.timestamp}}</view>
+    </block>
+
+
+    <view class="weui-cell1 weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <label class="weui-label">发表评论</label>
+      </view>
+      <view class="weui-cell__bd">
+        <input type="text" bindinput="textinput" placeholder="在此输入" auto-focus />
+      </view>
+      <view class="weui-cell__ft">
+        <button class="weui-vcode-btn" bindtap="onSendtap">提交</button>
+      </view>
+    </view>
+  </view>
+</view>

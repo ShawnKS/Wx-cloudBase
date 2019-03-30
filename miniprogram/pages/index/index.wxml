@@ -1,43 +1,28 @@
-<!--index.wxml-->
-<view class="container1">
-
-  <!-- 用户 openid -->
-  <view class="userinfo">
-    <button 
-      open-type="getUserInfo" 
-      bindgetuserinfo="onGetUserInfo"
-      class="userinfo-avatar"
-      style="background-image: url({{avatarUrl}})"
-    ></button>
-    <view>
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+<!-- <<view>
+<van-card desc="授课老师：高立" title="基础" thumb="https://img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg">
+  <view slot="tags">
+    <van-tag type="primary">电路分析</van-tag>
+    <view slot="footer">
+    <van-button size="mini" type="primary" plain bind:click="viewItem">点击观看</van-button>
+  </view>
+  </view>
+  
+</van-card>
+</view>> -->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="电路分析"></van-tab>
+  <van-tab title="信号与系统"></van-tab>
+  <van-tab title="硬件基础"></van-tab>
+  <van-tab title="数字信号处理"></van-tab>
+</van-tabs>
+<view wx:for="{{video_list}}">
+  <van-card desc="{{item.teacher}}" title="{{item.videoname}}" thumb="https://img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg">
+    <view slot="tags">
+      <van-tag type="primary">{{item.tag}}</van-tag>
+      <view slot="footer">
+        <van-button data-id="{{item._id}}" size="mini" type="primary" plain bind:click="viewItem">点击观看</van-button>
+      </view>
     </view>
-  </view>
 
-
-  <!-- 上传图片 -->
-  <view class="uploader">
-    <view class="uploader-text" bindtap="doUpload">
-      <text>上传图片</text>
-    </view>
-    <view class="uploader-container" wx:if="{{imgUrl}}">
-      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
-    </view>
-  </view>
-
-
-  <!-- 操作数据库 -->
-  <view class="uploader">
-    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
-      <text>前端操作数据库</text>
-    </navigator>
-  </view>
-
-  <!-- 新建云函数 -->
-  <view class="uploader">
-    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
-      <text>快速新建云函数</text>
-    </navigator>
-  </view>
-
+  </van-card>
 </view>
