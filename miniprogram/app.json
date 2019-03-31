@@ -12,7 +12,8 @@
     "pages/regist/regist",
     "pages/usercenter/usercenter",
     "pages/videosdetail/videosdetail",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/fav/fav"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -32,7 +33,7 @@
         "selectedIconPath":"images/course_red.png"
       },
       {
-        "pagePath": "pages/videos/videos",
+        "pagePath": "pages/fav/fav",
         "text": "收藏夹",
         "iconPath":"images/like.png",
         "selectedIconPath": "images/like_red.png"
