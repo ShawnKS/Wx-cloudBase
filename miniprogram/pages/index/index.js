@@ -18,7 +18,10 @@ Page({
     });
     const db = wx.cloud.database();
     var _this = this;
-    db.collection('videos').get({
+    db.collection('videos').where({
+      tag: '电路分析'
+
+    }).get({
       success: res => {
         console.log(res.data);
         this.setData({

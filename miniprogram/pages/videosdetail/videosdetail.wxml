@@ -4,6 +4,7 @@
   <view class="video_title">{{video.videoname}}</view>
   <view class="weui-cells">
     课程说明 testtesttestttt11111
+    <button bindtap="favtap">收藏</button>
   </view>
   <view>
 

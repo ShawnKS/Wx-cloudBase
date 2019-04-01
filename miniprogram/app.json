@@ -7,13 +7,13 @@
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
-    "pages/videos/videos",
     "pages/login/login",
     "pages/regist/regist",
     "pages/usercenter/usercenter",
     "pages/videosdetail/videosdetail",
     "pages/user/user",
-    "pages/fav/fav"
+    "pages/fav/fav",
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
