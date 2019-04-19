@@ -16,6 +16,15 @@ Page({
       url: '../fav/fav',
     })
   },
+
+  anatap: function () {
+    console.log(1)
+    wx.navigateTo({
+      url: '../analyse/analyse',
+    })
+  },
+
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -52,4 +61,4 @@ Page({
       hasUserInfo: true
     })
   }
-})
+});

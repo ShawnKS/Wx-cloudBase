@@ -14,7 +14,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     var _userid = app.globalData.useropenid
     wx.cloud.init({
       env: 'hardwa-f51520',
@@ -64,7 +64,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad()
   },
 
   /**
@@ -100,5 +100,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  viewItem: function (event) {
+    console.log(event);
+    var id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../videosdetail/videosdetail?id=' + id,
+    });
   }
 })

@@ -22,7 +22,7 @@
         <label class="weui-label">发表评论</label>
       </view>
       <view class="weui-cell__bd">
-        <input type="text" bindinput="textinput" placeholder="在此输入" auto-focus />
+        <input type="text" bindinput="textinput" placeholder="在此输入" />
       </view>
       <view class="weui-cell__ft">
         <button class="weui-vcode-btn" bindtap="onSendtap">提交</button>
