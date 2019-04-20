@@ -24,6 +24,13 @@ Page({
     })
   },
 
+  anatap: function () {
+    console.log(1)
+    wx.navigateTo({
+      url: '../analyse/course_update',
+    })
+  },
+
 
   onLoad: function () {
     if (app.globalData.userInfo) {

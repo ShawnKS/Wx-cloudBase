@@ -16,6 +16,12 @@
   color: #aaa;
 }
 
+.userinfo-text {
+  margin-top: 5px;
+  color: rgb(31, 30, 30);
+  font-size: 16px;
+}
+
 .usermotto {
   margin-top: 200px;
 }
