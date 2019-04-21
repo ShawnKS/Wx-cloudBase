@@ -1,0 +1,6 @@
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传视频</text>
+    </view>
+
+  </view>

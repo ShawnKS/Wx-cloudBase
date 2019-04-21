@@ -24,10 +24,10 @@ Page({
     })
   },
 
-  anatap: function () {
+  addtap: function () {
     console.log(1)
     wx.navigateTo({
-      url: '../analyse/course_update',
+      url: '../course_update/course_update',
     })
   },
 

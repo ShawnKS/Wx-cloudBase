@@ -14,7 +14,7 @@
     "pages/user/user",
     "pages/fav/fav",
     "pages/analyse/analyse",
-    "course_update/course_update"
+    "pages/course_update/course_update"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
