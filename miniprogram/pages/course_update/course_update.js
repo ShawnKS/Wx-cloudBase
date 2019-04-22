@@ -65,7 +65,7 @@ Page({
 
   },
   doUpload: function () {
-    // 选择图片
+    // 选择视频
     wx.chooseVideo({
       sourceType: ['album', 'camera'],
       maxDuration: 60,
@@ -75,9 +75,9 @@ Page({
           title: '上传中',
         })
 
-        const filePath = res.tempFilePaths
+        const filePath = res.tempFilePath
 
-        // 上传图片
+        // 上传视频
         const cloudPath = 'my-video'
         wx.cloud.uploadFile({
           cloudPath,
