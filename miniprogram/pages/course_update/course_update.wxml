@@ -1,3 +1,27 @@
+  <van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="课程名"
+    icon="question-o"
+    bind:input="coursenameinput"
+    placeholder="请输入课程名"
+  />
+
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="介绍"
+    placeholder="请输入课程介绍"
+    bind:input="courseintro"
+    required
+    border="{{ false }}"
+  />
+
+  <van-popup show="{{ show }}" bind:close="onClose">内容</van-popup>
+
+</van-cell-group>
   <view class="uploader">
     <view class="uploader-text" bindtap="doUpload">
       <text>上传视频</text>

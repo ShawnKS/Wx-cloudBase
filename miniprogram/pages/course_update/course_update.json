@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-field": "../../dist/field/index",
+    "van-popup": "../../dist/popup/index",
+      "van-radio": "../../dist/radio/index",
+      "van-radio-group": "../../dist/radio-group/index"
+  }
 }

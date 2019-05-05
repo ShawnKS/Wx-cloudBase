@@ -6,64 +6,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    coursename:'',
+    courseintro:'',
+    show: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onClose() {
+    this.setData({ show: false });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  coursenameinput: function(e){
+    this.setData({
+      coursename:e.detail
+    })
+    console.log(this.data.coursename)
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  courseintro: function(e){
+    this.setData({
+      courseintro:e.detail
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
   doUpload: function () {
     // 选择视频
     wx.chooseVideo({
@@ -78,7 +42,7 @@ Page({
         const filePath = res.tempFilePath
 
         // 上传视频
-        const cloudPath = 'my-video'
+        const cloudPath = Math.random().toString(36).substr(2)
         wx.cloud.uploadFile({
           cloudPath,
           filePath,
