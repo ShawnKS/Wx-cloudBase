@@ -4,7 +4,47 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    console.log("当前时间戳为：" + timestamp);
+    //获取当前时间
+    var n = timestamp * 1000;
+    var date = new Date(n)
+    console.log(date.getDate())
+    var h = date.getHours();
+    //分
+    var m = date.getMinutes();
+    //秒
+    var s = date.getSeconds();
+    var month = date.getMonth() + 1;
+    if(month<10)
+    month = "0"+month
+    if(date.getDay()<10)
+      var datee = date.getFullYear() + "-" + month + "-0" + date.getDay();
+    else
+      var datee = date.getFullYear() + "-" + month + "-" +date.getDay();
+    console.log("当前时间："+ h + ":" + m + ":" + s);
+    console.log(datee);
+    wx.cloud.init({
+      env: 'hardwa-f51520',
+    });
+    const db = wx.cloud.database();
+    db.collection('logintime').add({
+      data: {
+        h: h,
+        m: m,
+        s: s,
+        date : datee,
+      },
+      success: function (res) {
+        wx.showToast({
+          title: '登入成功',
+          duration: 2000
+        })
+        console.log(res);
+        console.log(res.errMsg);
+      }
+    })
     // 登录
     wx.login({
       success: res => {

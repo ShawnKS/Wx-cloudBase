@@ -19,12 +19,20 @@
     border="{{ false }}"
   />
 
-  <van-popup show="{{ show }}" bind:close="onClose">内容</van-popup>
-
+  <view class="section">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        点击此处选择您要上传的课程种类：{{array[index]}}
+      </view>
+    </picker>
+  </view>
 </van-cell-group>
+
   <view class="uploader">
     <view class="uploader-text" bindtap="doUpload">
       <text>上传视频</text>
     </view>
-
   </view>
+  <van-button 
+  bind:click='backtap' 
+  plain hairline type="primary" van-button size="large">返回</van-button>

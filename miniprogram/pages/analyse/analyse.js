@@ -79,11 +79,20 @@ Page({
     }
   },
   data: {
+    multiIndex: [0, 0, 0],
+    date: '2019-01-01',
+    time: '12:01',
+    customItem: '全部',
     ec: {
       onInit: initChart
     }
   },
-
+  bindDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
   onReady() {
   }
 });

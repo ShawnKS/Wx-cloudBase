@@ -8,8 +8,24 @@ Page({
   data: {
     coursename:'',
     courseintro:'',
-    show: false
+    show: false,
+    array: ['DSP', '电分', '信号与系统', '？？'],
+    index: 0,
   },
+
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  backtap: function(){
+    console.log('1')
+    wx.navigateBack({
+      delta:1
+    })
+  },
+
 
   onClose() {
     this.setData({ show: false });
