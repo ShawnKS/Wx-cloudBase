@@ -1,5 +1,5 @@
 import * as echarts from '../../ec-canvas/echarts';
-
+var userdata = [0, 0, 0, 0, 0, 0];
 const app = getApp();
 
 function initChart(canvas, width, height) {
@@ -8,7 +8,6 @@ function initChart(canvas, width, height) {
     height: height
   });
   canvas.setChart(chart);
-
   var option = {
     title: {
       text: '测试曲线图',
@@ -51,17 +50,17 @@ function initChart(canvas, width, height) {
       name: 'A',
       type: 'line',
       smooth: true,
-      data: [18, 36, 65, 30, 78, 40]
+      data: userdata
     }, {
       name: 'B',
       type: 'line',
       smooth: true,
-      data: [12, 50, 51, 35, 70, 30]
+      data: [0, 0, 0, 0, 0, 0]
     }, {
       name: 'C',
       type: 'line',
       smooth: true,
-      data: [10, 30, 31, 50, 40, 20]
+      data: [0, 0, 0, 0, 0, 0]
     }]
   };
 
@@ -92,6 +91,77 @@ Page({
     this.setData({
       date: e.detail.value
     })
+    wx.cloud.init({
+      env: 'hardwa-f51520',
+    });
+    const db = wx.cloud.database();
+    const _ = db.command
+    db.collection('logintime').where({
+      date: _.eq(this.data.date),
+      h: _.lt(4).and(_.gte(0))
+    })
+      .count({
+        success(res) {
+          console.log(res.total)
+          userdata[0]=res.total
+          console.log(userdata)
+        }
+      })
+    db.collection('logintime').where({
+      date: _.eq(this.data.date),
+      h: _.lt(8).and(_.gte(4))
+    })
+      .count({
+        success(res) {
+          console.log(res.total)
+          userdata[1] = res.total
+          console.log(userdata)
+        }
+      })
+    db.collection('logintime').where({
+      date: _.eq(this.data.date),
+      h: _.lt(12).and(_.gte(8))
+    })
+      .count({
+        success(res) {
+          console.log(res.total)
+          userdata[2] = res.total
+          console.log(userdata)
+        }
+      })
+    db.collection('logintime').where({
+      date: _.eq(this.data.date),
+      h: _.lt(16).and(_.gte(12))
+    })
+      .count({
+        success(res) {
+          console.log(res.total)
+          userdata[3] = res.total
+          console.log(userdata)
+        }
+      })
+    db.collection('logintime').where({
+      date: _.eq(this.data.date),
+      h: _.lt(20).and(_.gte(16))
+    })
+      .count({
+        success(res) {
+          console.log(res.total)
+          userdata[4] = res.total
+          console.log(userdata)
+        }
+      })
+    db.collection('logintime').where({
+      date: _.eq(this.data.date),
+      h: _.lt(24).and(_.gte(20))
+    })
+      .count({
+        success(res) {
+          console.log(res.total)
+          userdata[5] = res.total
+          console.log(userdata)
+        }
+      })
   },
   onReady() {
   }

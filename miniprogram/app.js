@@ -20,9 +20,9 @@ App({
     if(month<10)
     month = "0"+month
     if(date.getDay()<10)
-      var datee = date.getFullYear() + "-" + month + "-0" + date.getDay();
+      var datee = date.getFullYear() + "-" + month + "-0" + date.getDate();
     else
-      var datee = date.getFullYear() + "-" + month + "-" +date.getDay();
+      var datee = date.getFullYear() + "-" + month + "-" +date.getDate();
     console.log("当前时间："+ h + ":" + m + ":" + s);
     console.log(datee);
     wx.cloud.init({
