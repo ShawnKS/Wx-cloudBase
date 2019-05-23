@@ -11,7 +11,8 @@
 
   <van-field
     value="{{ password }}"
-    type="password"
+    required
+    clearable
     label="介绍"
     placeholder="请输入课程介绍"
     bind:input="courseintro"

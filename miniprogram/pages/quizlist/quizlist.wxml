@@ -1,0 +1,3 @@
+<van-cell-group>
+  <van-cell title="电路课程意见收集"  clickable="{{true}}" bind:click="onclick" />
+</van-cell-group>

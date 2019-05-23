@@ -4,15 +4,5 @@
 </view>
 
 <view class="section">
-  <picker
-    mode="date"
-    value="{{date}}"
-    start="2015-09-01"
-    end="2020-09-01"
-    bindchange="bindDateChange"
-  >
-    <view class="picker">
-      当前选择日期: 2019-05-12
-    </view>
-  </picker>
+  <text>当前选择日期{{date}}</text>
 </view>

@@ -1,6 +1,6 @@
 import * as echarts from '../../ec-canvas/echarts';
 var userdata = [0, 0, 0, 0, 0, 0];
-const app = getApp();
+var app = getApp();
 
 function initChart(canvas, width, height) {
   const chart = echarts.init(canvas, null, {
@@ -47,21 +47,11 @@ function initChart(canvas, width, height) {
       // show: false
     },
     series: [{
-      name: 'A',
+      name: 'test',
       type: 'line',
-      smooth: true,
+      smooth: false,
       data: app.globalData.userdata
-    }, {
-      name: 'B',
-      type: 'line',
-      smooth: true,
-      data: [0, 0, 0, 0, 0, 0]
-    }, {
-      name: 'C',
-      type: 'line',
-      smooth: true,
-      data: [0, 0, 0, 0, 0, 0]
-    }]
+    }, ]
   };
 
   chart.setOption(option);
@@ -162,6 +152,10 @@ Page({
           console.log(userdata)
         }
       })
+  }, onLoad: function (options){
+    this.setData({
+      date:app.globalData.date
+    })
   },
   onReady() {
   }

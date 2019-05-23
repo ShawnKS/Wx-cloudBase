@@ -1,1 +1,22 @@
-/* pages/quizanalyze/quizanalyze.wxss */
+.move-container {
+  width: 100%;
+  min-height: 500px;
+}
+page { background-color:#DBDBDB; }
+#mychart-dom-move-bar {
+  justify-content: center; 
+  width: 100%;
+  height: 400px;
+  margin: 0px;
+  border: 1px solid #CDC9C9;
+  display: block;
+}
+
+.move-container .text {
+  margin-bottom: 20px;
+}
+
+.move-container text {
+  margin: 10px;
+  display: block;
+}

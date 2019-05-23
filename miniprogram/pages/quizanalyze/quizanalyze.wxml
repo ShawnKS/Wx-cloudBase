@@ -1,2 +1,24 @@
-<!--pages/quizanalyze/quizanalyze.wxml-->
-<text>pages/quizanalyze/quizanalyze.wxml</text>
+<!--index.wxml-->
+<van-cell-group>
+  <van-cell title="问题1" value="您是否对本课程设计满意" clickable="{{true}}" bind:click="onclick" />
+</van-cell-group>
+<view class="container">
+  <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ ecBar1 }}"></ec-canvas>
+  
+</view>
+
+<van-cell-group>
+  <van-cell title="问题2" value="您是否对本课程有兴趣" clickable="{{true}}" bind:click="onclick" />
+</van-cell-group>
+<view class="container">
+  <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ ecBar2 }}"></ec-canvas>
+  
+</view>
+
+<van-cell-group>
+  <van-cell title="问题3" value="您是否在课后查阅相关资料" clickable="{{true}}" bind:click="onclick" />
+</van-cell-group>
+<view class="container">
+  <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ ecBar3 }}"></ec-canvas>
+  
+</view>

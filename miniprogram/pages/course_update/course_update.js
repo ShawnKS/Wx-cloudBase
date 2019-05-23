@@ -7,16 +7,19 @@ Page({
    */
   data: {
     coursename:'',
-    courseintro:'',
+    coursetype:'电路分析',
     show: false,
-    array: ['DSP', '电分', '信号与系统', '？？'],
+    array: ['DSP', '电路分析', '信号与系统', '？？'],
     index: 0,
   },
 
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
+      index : e.detail.value
+    })
+    this.setData({
+      coursetype: this.data.array[e.detail.value]
     })
   },
   backtap: function(){
@@ -69,9 +72,6 @@ Page({
             app.globalData.cloudPath = cloudPath
             app.globalData.imagePath = filePath
 
-            wx.navigateTo({
-              url: '../storageConsole/storageConsole'
-            })
           },
           fail: e => {
             console.error('[上传文件] 失败：', e)
@@ -83,12 +83,34 @@ Page({
           complete: () => {
             wx.hideLoading()
           }
-        })
 
+        })
       },
       fail: e => {
         console.error(e)
       }
+    })
+    const db = wx.cloud.database();
+    var coursetype = this.data.coursetype
+    var coursename = this.data.coursename
+    db.collection('videos').add({
+      data: {
+        tag: coursetype,
+        videosource: app.globalData.fileID,
+        videoname: coursename,
+        teacher: "testsxz",
+      },
+      success: function (res) {
+        wx.showToast({
+          title: '提交成功',
+          duration: 2000
+        })
+        console.log(res);
+        console.log(res.errMsg);
+      }
+    })
+    wx.switchTab({
+      url: '../index/index',
     })
   },
 

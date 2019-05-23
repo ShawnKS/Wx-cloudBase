@@ -48,7 +48,7 @@ Page({
   taskdatatap: function () {
     console.log(1)
     wx.navigateTo({
-      url: '../taskdata/taksdata',
+      url: '../quizlist/quizlist',
     })
   },
 

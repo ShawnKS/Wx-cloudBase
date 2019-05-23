@@ -18,6 +18,7 @@
     "pages/analyseAhead/analyseAhead",
     "pages/taskupdate/taskupdate",
     "pages/taskdata/taksdata",
+    "pages/quizlist/quizlist",
     "pages/quizanalyze/quizanalyze"
   ],
   "window": {
