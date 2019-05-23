@@ -18,17 +18,39 @@ Page({
   anatap: function () {
     console.log(1)
     wx.navigateTo({
-      url: '../analyse/analyse',
+      url: '../analyseAhead/analyseAhead',
     })
   },
-
+  developer: function(){
+    wx.showModal({
+      title: '开发者',
+      content: '北邮数媒',
+      success: function (res) {
+        if
+        (res.confirm) {
+          console.log('用户点击确定')
+        }
+      }
+    })
+  },
   addtap: function () {
     console.log(1)
     wx.navigateTo({
       url: '../course_update/course_update',
     })
   },
-
+  taskupdatetap: function () {
+    console.log(1)
+    wx.navigateTo({
+      url: '../taskupdate/taskupdate',
+    })
+  },
+  taskdatatap: function () {
+    console.log(1)
+    wx.navigateTo({
+      url: '../taskdata/taksdata',
+    })
+  },
 
   onLoad: function () {
     if (app.globalData.userInfo) {

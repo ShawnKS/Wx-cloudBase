@@ -1,90 +1,20 @@
-import * as echarts from '../../ec-canvas/echarts';
-var userdata = [0, 0, 0, 0, 0, 0];
-const app = getApp();
-
-function initChart(canvas, width, height) {
-  const chart = echarts.init(canvas, null, {
-    width: width,
-    height: height
-  });
-  canvas.setChart(chart);
-  var option = {
-    title: {
-      text: '测试曲线图',
-      left: 'center'
-    },
-    color: ["#37A2DA", "#67E0E3", "#9FE6B8"],
-    legend: {
-      data: ['A', 'B', 'C'],
-      top: 50,
-      left: 'center',
-      backgroundColor: 'red',
-      z: 100
-    },
-    grid: {
-      containLabel: true
-    },
-    tooltip: {
-      show: true,
-      trigger: 'axis'
-    },
-    xAxis: {
-      name: '时间',
-      type: 'category',
-      boundaryGap: false,
-      data: ['0:00', '4:00', '8:00', '12:00', '16:00', '20:00',],
-      // show: false
-    },
-    yAxis: {
-      name : '登入人数',
-      x: 'center',
-      type: 'value',
-      splitLine: {
-        lineStyle: {
-          type: 'dashed'
-        }
-      }
-      // show: false
-    },
-    series: [{
-      name: 'A',
-      type: 'line',
-      smooth: true,
-      data: app.globalData.userdata
-    }, {
-      name: 'B',
-      type: 'line',
-      smooth: true,
-      data: [0, 0, 0, 0, 0, 0]
-    }, {
-      name: 'C',
-      type: 'line',
-      smooth: true,
-      data: [0, 0, 0, 0, 0, 0]
-    }]
-  };
-
-  chart.setOption(option);
-  return chart;
-}
-
+// pages/analyseAhead/analyseAhead.js
+var userdata = [0,0,0,0,0,0]
+var app = getApp()
 Page({
-  onShareAppMessage: function (res) {
-    return {
-      title: 'ECharts 可以在微信小程序中使用啦！',
-      path: '/pages/index/index',
-      success: function () { },
-      fail: function () { }
-    }
-  },
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    multiIndex: [0, 0, 0],
-    date: app.globalData.date,
-    time: '12:01',
-    customItem: '全部',
-    ec: {
-      onInit: initChart
-    }
+    date: '2019-01-01',
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
   },
   bindDateChange(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -103,7 +33,7 @@ Page({
       .count({
         success(res) {
           console.log(res.total)
-          userdata[0]=res.total
+          userdata[0] = res.total
           console.log(userdata)
         }
       })
@@ -162,7 +92,16 @@ Page({
           console.log(userdata)
         }
       })
+      app.globalData.userdata = userdata
+      app.globalData.date = this.data.date
+      console.log(this.data.date)
+      console.log(app.globalData.userdata)
+      console.log(app.globalData.date)
   },
-  onReady() {
-  }
-});
+  analysetap: function () {
+    console.log(1)
+    wx.navigateTo({
+      url: '../analyse/analyse',
+    })
+  },
+})

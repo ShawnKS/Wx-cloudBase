@@ -1,0 +1,24 @@
+ <view class="weui-cell1 weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <label class="weui-label">请输入您问卷的名称</label>
+      </view>
+      <van-cell-group>
+  <van-field
+    value="{{ value }}"
+    placeholder="在此输入"
+    border="{{ false }}"
+    bind:change="onChange"
+  />
+</van-cell-group>
+    </view>
+<view class="section">
+  <picker class="picker" bindchange="bindChange" value="{{Index}}"  range="{{Data}}" range-key="id">
+    <view >
+      您的问卷共有：{{Data[Index].id}} 个问题
+    </view>
+</picker>
+</view>
+<view class='main'>
+  <van-button 
+  bind:click='tasktap' 
+  plain hairline type="primary" van-button size="normal">问题编辑</van-button></view>

@@ -3,8 +3,8 @@
   <video src="{{video.videosource}}" style="width: 100%; height: {{videoHeight}}px;" autoplay="false"></video>
   <view class="video_title">{{video.videoname}}</view>
   <view class="weui-cells">
-    课程说明 testtesttestttt11111
-    <button bindtap="favtap">收藏</button>
+    数字电路基础
+    <van-button  bind:click="favtap" plain hairline type="primary" van-button size="large">收藏</van-button>
   </view>
   <view>
 
@@ -13,7 +13,7 @@
         <view class="weui-cell__bd">
           <p>{{item.textinput}}</p>
         </view>
-        <view class="weui-cell__ft">{{item.timestamp}}</view>
+        <view class="weui-cell__ft">2019-05-02</view>
     </block>
 
 

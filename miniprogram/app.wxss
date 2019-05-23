@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "dist/common/index.wxss";
 @import 'weui.wxss'
 .container1 {
   display: flex;
@@ -7,6 +8,7 @@
   box-sizing: border-box;
 } 
 @import 'weui.wxss';
+page { background-color:#eee; }
 .container {
   display: flex;
   flex-direction: column;
@@ -247,6 +249,7 @@ checkbox, radio{
 
 page {
   height: 100%;
+   font-family:"GB2312 FangSong_GB2312";
 }
 view , scroll-view, page {
   padding: 0px;

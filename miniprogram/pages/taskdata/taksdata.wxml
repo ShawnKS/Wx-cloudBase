@@ -1,0 +1,48 @@
+<!--pages/taskdata/taksdata.wxml-->
+<view class = 'hello'>
+<text>请输入您的第{{quizindex}}个问题与选项</text>
+</view>
+<van-cell-group>
+<van-field
+    value="{{ value }}"
+    placeholder="问题"
+    border="{{ false }}"
+    bind:change="task"
+  />
+</van-cell-group>
+<van-cell-group>
+<van-field
+    value="{{ value }}"
+    placeholder="选项A"
+    border="{{ false }}"
+    bind:change="AnswerA"
+  />
+</van-cell-group>
+<van-cell-group>
+<van-field
+    value="{{ value }}"
+    placeholder="选项B"
+    border="{{ false }}"
+    bind:change="AnswerB"
+  />
+</van-cell-group>
+<van-cell-group>
+<van-field
+    value="{{ value }}"
+    placeholder="选项C"
+    border="{{ false }}"
+    bind:change="AnswerC"
+  />
+</van-cell-group>
+<van-cell-group>
+<van-field
+    value="{{ value }}"
+    placeholder="选项D"
+    border="{{ false }}"
+    bind:change="AnswerD"
+  />
+</van-cell-group>
+<view class='hello'>
+  <van-button 
+  bind:click='tasktap' 
+  plain hairline type="primary" van-button size="normal">完成当前编辑</van-button></view>

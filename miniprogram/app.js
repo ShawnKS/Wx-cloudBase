@@ -19,7 +19,7 @@ App({
     var month = date.getMonth() + 1;
     if(month<10)
     month = "0"+month
-    if(date.getDay()<10)
+    if(date.getDate()<10)
       var datee = date.getFullYear() + "-" + month + "-0" + date.getDate();
     else
       var datee = date.getFullYear() + "-" + month + "-" +date.getDate();

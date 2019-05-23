@@ -6,7 +6,7 @@
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
-    <text class="userinfo-text">xx老师,您好</text>
+    <text class="userinfo-text">老师,您好</text>
   </view>
   <view class="page__bd">
     <view class="weui-grids">
@@ -25,8 +25,15 @@
         <image class="weui-grid__icon" src="/images/add.png" />
         <view class="weui-grid__label">课程上传</view>
       </view>
-
-      <view class="weui-grid" hover-class="weui-grid_active">
+      <view class="weui-grid" bindtap="taskupdatetap" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/images/icon_tabbar.png" />
+        <view class="weui-grid__label">发布问卷</view>
+      </view>
+      <view class="weui-grid" bindtap="taskdatatap" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/images/icon_tabbar.png" />
+        <view class="weui-grid__label">问卷数据</view>
+      </view>
+      <view class="weui-grid" bindtap="developer" hover-class="weui-grid_active">
         <image class="weui-grid__icon" src="/images/icon_tabbar.png" />
         <view class="weui-grid__label">开发者信息</view>
       </view>

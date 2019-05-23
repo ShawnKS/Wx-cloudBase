@@ -1,0 +1,8 @@
+/* pages/taskdata/taksdata.wxss */
+.hello{
+display: flex;
+font-size: 35rpx;
+font-family:GB2312 FangSong_GB2312;
+color: grey;
+justify-content: center;  
+}

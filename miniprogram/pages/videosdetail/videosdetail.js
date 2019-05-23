@@ -40,6 +40,7 @@ Page({
     })
     .get({
       success: res =>{
+        console.log(res.data)
         this.setData({
           comments: res.data
         });
